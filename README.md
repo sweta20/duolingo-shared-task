@@ -1,5 +1,9 @@
+# Duolingo Shared Task 2020
 
-# Training MT models
+This repository contains the code for our shared task submission: [Generating Diverse Translations via Weighted Fine-tuning and Hypotheses Filtering for the Duolingo STAPLE Task](https://aclanthology.org/2020.ngt-1.21/).
+
+
+## Training MT models
 
 
 ``` bash
@@ -39,7 +43,7 @@ To evaluate the trained model on test split,
 	bash scripts/evaluate_all.sh -s test -t ja -l sockeye-model-finetune-weighted
 ```
 
-# Scripts for extracting features and training the classifier
+## Scripts for extracting features and training the classifier
 
 ``` bash
 
@@ -73,7 +77,7 @@ For filtering:
 ```
 
 
-# System Combinations
+## System Combinations
 
 ``` bash
 
@@ -81,11 +85,33 @@ python scripts/combine_lists.py --lista <file1> --listb <file2> --outputfname <o
 
 ```
 
-# Create Submission results
+## Create Submission results
 
 The script create_results.sh includes different system combinations we tried for our official dev and test evaluation. 
 
 
-# Author
+
+## Cite our work
+
+If you make use of the code, models, or algorithm, please cite our paper:
+
+```
+@inproceedings{agrawal-carpuat-2020-generating,
+    title = "Generating Diverse Translations via Weighted Fine-tuning and Hypotheses Filtering for the {D}uolingo {STAPLE} Task",
+    author = "Agrawal, Sweta  and
+      Carpuat, Marine",
+    booktitle = "Proceedings of the Fourth Workshop on Neural Generation and Translation",
+    month = jul,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.ngt-1.21",
+    doi = "10.18653/v1/2020.ngt-1.21",
+    pages = "178--187",
+    abstract = "This paper describes the University of Maryland{'}s submission to the Duolingo Shared Task on Simultaneous Translation And Paraphrase for Language Education (STAPLE). Unlike the standard machine translation task, STAPLE requires generating a set of outputs for a given input sequence, aiming to cover the space of translations produced by language learners. We adapt neural machine translation models to this requirement by (a) generating n-best translation hypotheses from a model fine-tuned on learner translations, oversampled to reflect the distribution of learner responses, and (b) filtering hypotheses using a feature-rich binary classifier that directly optimizes a close approximation of the official evaluation metric. Combination of systems that use these two strategies achieves F1 scores of 53.9{\%} and 52.5{\%} on Vietnamese and Portuguese, respectively ranking 2nd and 4th on the leaderboard.",
+}
+```
+
+## Author
 
 Sweta Agrawal
